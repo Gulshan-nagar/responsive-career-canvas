@@ -38,7 +38,7 @@ const GithubStats = () => {
       // @ts-ignore - GitHub calendar is loaded from external script
       if (typeof GitHubCalendar !== 'undefined') {
         // @ts-ignore
-        GitHubCalendar(".github-calendar", "yourusername", { responsive: true });
+        GitHubCalendar(".github-calendar", "Gulshan-nagar", { responsive: true });
       }
     };
 
@@ -48,9 +48,6 @@ const GithubStats = () => {
       });
     };
   }, []);
-
-  // Replace with your GitHub username
-  const username = "yourusername";
 
   return (
     <section className="section-padding bg-navy text-white">
@@ -64,7 +61,7 @@ const GithubStats = () => {
           <Card className="p-6 bg-white reveal">
             <h3 className="text-navy text-xl font-bold mb-4">GitHub Stats</h3>
             <img 
-              src={`https://github-readme-stats.vercel.app/api?username=${username}&show_icons=true&theme=default`}
+              src={`https://github-readme-stats.vercel.app/api?username=Gulshan-nagar&show_icons=true&theme=default`}
               alt="GitHub Stats"
               className="w-full"
             />
@@ -73,7 +70,7 @@ const GithubStats = () => {
           <Card className="p-6 bg-white reveal">
             <h3 className="text-navy text-xl font-bold mb-4">Most Used Languages</h3>
             <img 
-              src={`https://github-readme-stats.vercel.app/api/top-langs/?username=${username}&layout=compact&theme=default`}
+              src={`https://github-readme-stats.vercel.app/api/top-langs/?username=Gulshan-nagar&layout=compact&theme=default`}
               alt="Most Used Languages"
               className="w-full"
             />

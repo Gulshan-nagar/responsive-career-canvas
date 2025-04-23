@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 
@@ -33,16 +32,7 @@ const Navbar = () => {
 
   // Resume download handler
   const handleDownloadResume = () => {
-    // Replace with your actual resume file path
-    const resumeUrl = "/resume.pdf";
-    
-    // Create a temporary anchor element
-    const link = document.createElement('a');
-    link.href = resumeUrl;
-    link.download = "Your-Name-Resume.pdf";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    window.open("https://resume-builder-test-new.masaischool.com/resume/public?resumeId=6808c69f577a628cae30a157", "_blank");
   };
 
   return (
