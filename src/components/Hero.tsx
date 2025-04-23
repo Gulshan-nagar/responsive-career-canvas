@@ -14,7 +14,7 @@ const Hero = () => {
   }, []);
 
   const handleDownloadResume = () => {
-    window.open("https://drive.google.com/file/d/1-1MU9IS--xcS0T9o1_-STn1DvX09dF85/view", "_blank");
+    window.open("https://resume-builder-test-new.masaischool.com/resume/public?resumeId=6808c69f577a628cae30a157", "_blank");
   };
 
   return (
@@ -51,8 +51,8 @@ const Hero = () => {
             <div className="relative">
               <div className="absolute -z-10 w-72 h-72 md:w-80 md:h-80 bg-teal/20 rounded-full -top-6 -left-6"></div>
               <img 
-                src="/placeholder.svg" // We'll update this when you provide your profile image
-                alt="Profile" 
+                src="https://drive.google.com/uc?export=view&id=1nQLechubMvHLYoCvKTDdImpOWAXwjFD_" 
+                alt="Gulshan Nagar" 
                 className="w-72 h-72 md:w-80 md:h-80 object-cover rounded-full border-4 border-white shadow-lg"
               />
             </div>
