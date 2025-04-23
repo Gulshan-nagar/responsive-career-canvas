@@ -1,18 +1,11 @@
 
 import { useState, useEffect } from "react";
 import { ArrowRight } from "lucide-react";
-import profilePlaceholder from "/placeholder.svg";
 
 const Hero = () => {
-  // Replace with your info
-  const name = "Your Name";
-  const title = "Full Stack Developer";
-  const shortBio = "I build exceptional and accessible digital experiences for the web.";
-  
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    // Add animation delay for entrance
     const timer = setTimeout(() => {
       setIsVisible(true);
     }, 300);
@@ -20,18 +13,8 @@ const Hero = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  // Resume download handler
   const handleDownloadResume = () => {
-    // Replace with your actual resume file path
-    const resumeUrl = "/resume.pdf";
-    
-    // Create a temporary anchor element
-    const link = document.createElement('a');
-    link.href = resumeUrl;
-    link.download = "Your-Name-Resume.pdf";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    window.open("https://drive.google.com/file/d/1-1MU9IS--xcS0T9o1_-STn1DvX09dF85/view", "_blank");
   };
 
   return (
@@ -43,11 +26,11 @@ const Hero = () => {
         <div className="flex flex-col md:flex-row items-center gap-12">
           <div className={`md:w-1/2 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} transition-all duration-700`}>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
-              Hi, I'm <span className="text-teal">{name}</span>
+              Hi, I'm <span className="text-teal">Gulshan Nagar</span>
             </h1>
-            <h2 className="text-2xl md:text-3xl text-navy font-medium mb-6">{title}</h2>
+            <h2 className="text-2xl md:text-3xl text-navy font-medium mb-6">MERN Stack Developer</h2>
             <p className="text-lg mb-8 max-w-md">
-              {shortBio}
+              Dynamic and adept Full Stack Web Developer skilled in the MERN stack, with strong problem solving abilities and expertise in modern development techniques.
             </p>
             <div className="flex flex-wrap gap-4">
               <button 
@@ -60,7 +43,7 @@ const Hero = () => {
                 onClick={handleDownloadResume}
                 className="border border-navy text-navy px-6 py-3 rounded-md hover:bg-navy hover:text-white transition-colors"
               >
-                Download Resume
+                View Resume
               </button>
             </div>
           </div>
@@ -68,7 +51,7 @@ const Hero = () => {
             <div className="relative">
               <div className="absolute -z-10 w-72 h-72 md:w-80 md:h-80 bg-teal/20 rounded-full -top-6 -left-6"></div>
               <img 
-                src={profilePlaceholder}
+                src="/placeholder.svg" // We'll update this when you provide your profile image
                 alt="Profile" 
                 className="w-72 h-72 md:w-80 md:h-80 object-cover rounded-full border-4 border-white shadow-lg"
               />

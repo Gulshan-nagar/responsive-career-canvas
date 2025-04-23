@@ -3,7 +3,6 @@ import { useEffect } from 'react';
 
 const About = () => {
   useEffect(() => {
-    // Intersection Observer for scroll animations
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -15,7 +14,6 @@ const About = () => {
       { threshold: 0.1 }
     );
 
-    // Observe all reveal elements
     const revealElements = document.querySelectorAll(".reveal");
     revealElements.forEach((element) => {
       observer.observe(element);
@@ -38,14 +36,34 @@ const About = () => {
         
         <div className="max-w-3xl mx-auto reveal">
           <p className="text-lg mb-6">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim.
+            Dynamic and adept Full Stack Web Developer skilled in the MERN stack, coupled with strong problem solving and collaboration abilities. Proficient utilizing Generative AI for modern development techniques.
           </p>
           <p className="text-lg mb-6">
-            Phasellus ullamcorper ipsum rutrum nunc. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna.
+            Committed to staying ahead with the latest technologies and swiftly adapting to new tech stacks.
           </p>
-          <p className="text-lg">
-            Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, quis gravida magna mi a libero. Fusce vulputate eleifend sapien. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus.
-          </p>
+          
+          <div className="flex flex-wrap gap-3 mt-8">
+            {['javascript', 'react.js', 'redux', 'node.js', 'express.js', 'mongoDB', 'mongoose', 'html', 'css', 'bootstrap', 'tailwind', 'git', 'github'].map((skill) => (
+              <span key={skill} className="bg-teal/20 text-teal px-4 py-2 rounded-full text-sm">
+                #{skill}
+              </span>
+            ))}
+          </div>
+
+          <div className="flex justify-center gap-6 mt-12">
+            <a href="https://www.linkedin.com/in/gulshan-nagar-b9b847283" target="_blank" rel="noopener noreferrer" className="text-white hover:text-teal transition-colors">
+              LinkedIn
+            </a>
+            <a href="https://github.com/Gulshan-nagar" target="_blank" rel="noopener noreferrer" className="text-white hover:text-teal transition-colors">
+              GitHub
+            </a>
+            <a href="https://x.com/nag62534" target="_blank" rel="noopener noreferrer" className="text-white hover:text-teal transition-colors">
+              Twitter
+            </a>
+            <a href="mailto:gulshannagar5525@gmail.com" className="text-white hover:text-teal transition-colors">
+              Email
+            </a>
+          </div>
         </div>
       </div>
     </section>
