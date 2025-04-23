@@ -1,4 +1,3 @@
-
 import { ExternalLink } from 'lucide-react';
 import { useEffect } from 'react';
 
@@ -98,7 +97,7 @@ const Projects = () => {
       title: "Diwali Project",
       subtitle: "Diwali Crackers Simulation",
       description: "This project demonstrates a virtual Diwali celebration with interactive fireworks and animations. It aims to bring the festive spirit online, allowing users to experience the joy of Diwali through a web-based simulation.",
-      image: "https://images.unsplash.com/photo-1604537529428-15bcbeecfe4d",
+      image: "https://media.istockphoto.com/id/2175620922/photo/female-friends-burning-sparklers-at-home-during-diwali-celebration.jpg?s=1024x1024&w=is&k=20&c=ivvzeY5ArWDWwtnnIjmeMPPM5AhPn9P4a6fF3I3P1w0=",
       technologies: ["WordPress", "Elementor", "HTML", "CSS", "JavaScript", "Figma"],
       demo: "https://spiffy-selkie-49e7bb.netlify.app/"
     }
@@ -111,15 +110,14 @@ const Projects = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-navy mb-4 reveal">My Projects</h2>
           <div className="w-20 h-1 bg-teal mx-auto"></div>
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
           {projects.map((project, index) => (
             <div 
               key={project.id} 
-              className={`project-card overflow-hidden flex flex-col reveal ${index % 2 === 0 ? '' : 'md:mt-12'}`}
-              style={{animationDelay: `${index * 0.1}s`}}
+              className={`project-card flex flex-col bg-white shadow-lg rounded-2xl overflow-hidden reveal h-full`}
             >
-              <div className="h-64 overflow-hidden">
+              <div className="h-64 w-full overflow-hidden">
                 <img 
                   src={project.image} 
                   alt={project.title} 
@@ -127,36 +125,36 @@ const Projects = () => {
                 />
               </div>
               <div className="p-6 flex flex-col flex-grow">
-                <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                <h4 className="text-gray-600 mb-3">{project.subtitle}</h4>
-                <p className="text-gray-600 mb-4">{project.description}</p>
-                <div className="mb-6 flex-grow">
+                <h3 className="text-xl font-bold mb-1">{project.title}</h3>
+                <h4 className="text-gray-600 mb-2">{project.subtitle}</h4>
+                <p className="text-gray-600 mb-4 text-sm flex-grow">{project.description}</p>
+                <div className="mb-4">
                   <div className="flex flex-wrap gap-2">
                     {project.technologies.map((tech, i) => (
                       <span 
                         key={i} 
-                        className="bg-navy/10 text-navy text-sm px-3 py-1 rounded"
+                        className="bg-navy/10 text-navy text-xs px-2 py-1 rounded"
                       >
                         {tech}
                       </span>
                     ))}
                   </div>
                 </div>
-                <div className="flex gap-4">
+                <div className="flex gap-4 mt-auto">
                   <a 
                     href={project.demo} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="bg-navy text-white px-4 py-2 rounded hover:bg-teal hover:text-navy transition-colors flex items-center gap-2 flex-grow justify-center"
+                    className="bg-navy text-white px-4 py-2 rounded hover:bg-teal hover:text-navy transition-colors flex items-center gap-2 flex-grow justify-center text-sm"
                   >
-                    Live Demo <ExternalLink size={16} />
+                    Live Demo <ExternalLink size={14} />
                   </a>
                   {project.github && (
                     <a 
                       href={project.github} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="border border-navy text-navy px-4 py-2 rounded hover:bg-navy hover:text-white transition-colors flex-grow text-center"
+                      className="border border-navy text-navy px-4 py-2 rounded hover:bg-navy hover:text-white transition-colors flex-grow text-center text-sm"
                     >
                       GitHub
                     </a>
