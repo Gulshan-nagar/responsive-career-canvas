@@ -1,25 +1,32 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Mail, Phone, Linkedin, Github, MapPin } from 'lucide-react';
-import { useState } from 'react';
 
 const Contact = () => {
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setSubmitting(true);
+
     const form = e.target;
     const data = new FormData(form);
 
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams(
-        Array.from(data.entries()).map(([k, v]) => [k, typeof v === 'string' ? v : ''])
-      ).toString()
+      body: new URLSearchParams(data).toString()
     })
-      .then(() => setSubmitted(true))
-      .catch(() => alert('Error submitting form'));
+      .then(() => {
+        setSubmitted(true);
+        setSubmitting(false);
+      })
+      .catch(() => {
+        alert('Error submitting form');
+        setSubmitting(false);
+      });
   };
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -33,14 +40,10 @@ const Contact = () => {
     );
 
     const revealElements = document.querySelectorAll(".reveal");
-    revealElements.forEach((element) => {
-      observer.observe(element);
-    });
+    revealElements.forEach((element) => observer.observe(element));
 
     return () => {
-      revealElements.forEach((element) => {
-        observer.unobserve(element);
-      });
+      revealElements.forEach((element) => observer.unobserve(element));
     };
   }, []);
 
@@ -61,7 +64,6 @@ const Contact = () => {
             <div className="bg-white p-8 rounded-lg shadow-sm h-full flex flex-col justify-between">
               <div>
                 <h3 className="text-2xl font-bold text-navy mb-6">Contact Information</h3>
-
                 <div className="space-y-6">
                   <div className="flex items-start gap-4">
                     <div className="bg-navy/10 p-3 rounded-full">
@@ -74,7 +76,6 @@ const Contact = () => {
                       </a>
                     </div>
                   </div>
-
                   <div className="flex items-start gap-4">
                     <div className="bg-navy/10 p-3 rounded-full">
                       <Phone size={24} className="text-navy" />
@@ -86,7 +87,6 @@ const Contact = () => {
                       </a>
                     </div>
                   </div>
-
                   <div className="flex items-start gap-4">
                     <div className="bg-navy/10 p-3 rounded-full">
                       <MapPin size={24} className="text-navy" />
@@ -97,26 +97,13 @@ const Contact = () => {
                     </div>
                   </div>
                 </div>
-
                 <div className="mt-8">
                   <h4 className="font-medium text-lg mb-4">Social Profiles</h4>
                   <div className="flex gap-4">
-                    <a
-                      href="https://linkedin.com/in/yourusername"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="bg-navy text-white p-3 rounded-full hover:bg-teal transition-colors"
-                      aria-label="LinkedIn"
-                    >
+                    <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" className="bg-navy text-white p-3 rounded-full hover:bg-teal transition-colors" aria-label="LinkedIn">
                       <Linkedin size={20} />
                     </a>
-                    <a
-                      href="https://github.com/yourusername"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="bg-navy text-white p-3 rounded-full hover:bg-teal transition-colors"
-                      aria-label="GitHub"
-                    >
+                    <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" className="bg-navy text-white p-3 rounded-full hover:bg-teal transition-colors" aria-label="GitHub">
                       <Github size={20} />
                     </a>
                   </div>
@@ -126,82 +113,46 @@ const Contact = () => {
           </div>
 
           {/* Contact Form */}
-          {submitted ? (
-            <div className="bg-white p-8 rounded-lg shadow-sm text-center">
-              <h3 className="text-2xl font-bold text-navy mb-4">Thank you!</h3>
-              <p>Your message has been submitted. I’ll get back to you shortly.</p>
-            </div>
-          ) : (
-            <form
-
-              name="contact"
-              method="POST"
-              data-netlify="true"
-              onSubmit={handleSubmit}
-              netlify-honeypot="bot-field"
-              action="/thank-you.html"
-              className="bg-white p-8 rounded-lg shadow-sm h-full flex flex-col justify-between"
-            >
-              {/* Required Hidden Inputs for Netlify */}
-              <input type="hidden" name="form-name" value="contact" />
-              <input type="hidden" name="bot-field" />
-
-              <div>
-                <h3 className="text-2xl font-bold text-navy mb-6">Send a Message</h3>
-
-                <div className="space-y-4">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-                      Your Name
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-teal"
-                      placeholder="John Doe"
-                      required
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                      Your Email
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-teal"
-                      placeholder="john@example.com"
-                      required
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
-                      Message
-                    </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      rows={5}
-                      className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-teal"
-                      placeholder="Your message here..."
-                      required
-                    ></textarea>
+          <div className="reveal h-full">
+            {submitted ? (
+              <div className="bg-white p-8 rounded-lg shadow-sm text-center">
+                <h3 className="text-2xl font-bold text-navy mb-4">Thank you!</h3>
+                <p>Your message has been submitted. I’ll get back to you shortly.</p>
+              </div>
+            ) : (
+              <form
+                name="contact"
+                method="POST"
+                data-netlify="true"
+                onSubmit={handleSubmit}
+                netlify-honeypot="bot-field"
+                className="bg-white p-8 rounded-lg shadow-sm h-full flex flex-col justify-between"
+              >
+                <input type="hidden" name="form-name" value="contact" />
+                <input type="hidden" name="bot-field" />
+                <div>
+                  <h3 className="text-2xl font-bold text-navy mb-6">Send a Message</h3>
+                  <div className="space-y-4">
+                    <div>
+                      <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Your Name</label>
+                      <input type="text" id="name" name="name" className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-teal" placeholder="John Doe" required />
+                    </div>
+                    <div>
+                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Your Email</label>
+                      <input type="email" id="email" name="email" className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-teal" placeholder="john@example.com" required />
+                    </div>
+                    <div>
+                      <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                      <textarea id="message" name="message" rows={5} className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-teal" placeholder="Your message here..." required></textarea>
+                    </div>
                   </div>
                 </div>
-              </div>
-
-              <button
-                type="submit"
-                className="mt-6 bg-navy text-white px-6 py-3 rounded w-full hover:bg-teal transition-colors"
-              >
-                Send Message
-              </button>
-            </form>
-          )}
+                <button type="submit" className="mt-6 bg-navy text-white px-6 py-3 rounded w-full hover:bg-teal transition-colors">
+                  {submitting ? 'Submitting...' : 'Send Message'}
+                </button>
+              </form>
+            )}
+          </div>
         </div>
       </div>
     </section>
