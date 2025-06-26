@@ -1,7 +1,25 @@
 import { useEffect } from 'react';
 import { Mail, Phone, Linkedin, Github, MapPin } from 'lucide-react';
+import { useState } from 'react';
 
 const Contact = () => {
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const data = new FormData(form);
+
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(
+        Array.from(data.entries()).map(([k, v]) => [k, typeof v === 'string' ? v : ''])
+      ).toString()
+    })
+      .then(() => setSubmitted(true))
+      .catch(() => alert('Error submitting form'));
+  };
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -108,11 +126,18 @@ const Contact = () => {
           </div>
 
           {/* Contact Form */}
-          <div className="reveal h-full">
+          {submitted ? (
+            <div className="bg-white p-8 rounded-lg shadow-sm text-center">
+              <h3 className="text-2xl font-bold text-navy mb-4">Thank you!</h3>
+              <p>Your message has been submitted. I’ll get back to you shortly.</p>
+            </div>
+          ) : (
             <form
+
               name="contact"
               method="POST"
               data-netlify="true"
+              onSubmit={handleSubmit}
               netlify-honeypot="bot-field"
               action="/thank-you.html"
               className="bg-white p-8 rounded-lg shadow-sm h-full flex flex-col justify-between"
@@ -176,7 +201,7 @@ const Contact = () => {
                 Send Message
               </button>
             </form>
-          </div>
+          )}
         </div>
       </div>
     </section>
