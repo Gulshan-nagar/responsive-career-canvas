@@ -43,7 +43,6 @@ const Contact = () => {
             <div className="bg-white p-8 rounded-lg shadow-sm h-full flex flex-col justify-between">
               <div>
                 <h3 className="text-2xl font-bold text-navy mb-6">Contact Information</h3>
-
                 <div className="space-y-6">
                   <div className="flex items-start gap-4">
                     <div className="bg-navy/10 p-3 rounded-full">
@@ -56,7 +55,6 @@ const Contact = () => {
                       </a>
                     </div>
                   </div>
-
                   <div className="flex items-start gap-4">
                     <div className="bg-navy/10 p-3 rounded-full">
                       <Phone size={24} className="text-navy" />
@@ -68,7 +66,6 @@ const Contact = () => {
                       </a>
                     </div>
                   </div>
-
                   <div className="flex items-start gap-4">
                     <div className="bg-navy/10 p-3 rounded-full">
                       <MapPin size={24} className="text-navy" />
@@ -79,7 +76,6 @@ const Contact = () => {
                     </div>
                   </div>
                 </div>
-
                 <div className="mt-8">
                   <h4 className="font-medium text-lg mb-4">Social Profiles</h4>
                   <div className="flex gap-4">
@@ -117,13 +113,12 @@ const Contact = () => {
               action="/thank-you.html"
               className="bg-white p-8 rounded-lg shadow-sm h-full flex flex-col justify-between"
             >
-              {/* Required Hidden Inputs for Netlify */}
+              {/* Netlify hidden inputs */}
               <input type="hidden" name="form-name" value="contact" />
               <input type="hidden" name="bot-field" />
 
               <div>
                 <h3 className="text-2xl font-bold text-navy mb-6">Send a Message</h3>
-
                 <div className="space-y-4">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
@@ -138,7 +133,6 @@ const Contact = () => {
                       required
                     />
                   </div>
-
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
                       Your Email
@@ -152,7 +146,6 @@ const Contact = () => {
                       required
                     />
                   </div>
-
                   <div>
                     <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
                       Message
