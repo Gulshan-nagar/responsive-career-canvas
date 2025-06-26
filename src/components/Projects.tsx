@@ -42,64 +42,71 @@ const Projects = () => {
       id: 1,
       title: "Expense Tracker",
       subtitle: "Track your expense",
-      description: "This is a project built using the MERN stack. In this Expense Tracker app, users can add their income and expenses. The app calculates and displays the total balance. Built with MongoDB, Express, React, and Node.js for seamless tracking and management of personal finances.",
+      description: "Track income and expenses using the MERN stack. Displays total balance for personal finance management.",
       image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f",
       technologies: ["MongoDB", "Express", "React", "Node.js", "HTML", "CSS", "Tailwind", "JavaScript"],
-      demo: "https://expense-tracker-vg8p.onrender.com"
+      demo: "https://expense-tracker-vg8p.onrender.com",
+      github: "https://github.com/Gulshan-nagar/Expense-tracker"
     },
     {
       id: 2,
       title: "Calori-Scan",
       subtitle: "Scan your food calorie",
-      description: "Winner of our Hackathon project – Calori-Scan helps users scan food items to track calories instantly. Built using modern web technologies and image recognition. A smart, health-focused solution to promote mindful eating and fitness tracking.",
+      description: "Scan food items to track calories instantly. Built with image recognition and modern web technologies.",
       image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
       technologies: ["HTML", "CSS", "Bootstrap", "JavaScript", "React", "Node", "Express", "MongoDB"],
-      demo: "https://calori-scan-frontend.vercel.app/"
+      demo: "https://calori-scan-frontend.vercel.app/",
+      github: "https://github.com/TheApostle-07/CaloriScan"
     },
     {
       id: 3,
       title: "JScript",
       subtitle: "Programming Language",
-      description: "In this project, I developed a new language called JScript by combining JavaScript and Python. I used concepts like variables, functions, loops, conditionals, and arrays to create an interactive and user-friendly interface, blending the strengths of both languages.",
+      description: "A hybrid language combining JavaScript and Python with support for variables, loops, and functions.",
       image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
       technologies: ["HTML", "CSS", "JavaScript"],
-      demo: "https://jscript-programming-language.netlify.app"
+      demo: "https://jscript-programming-language.netlify.app",
+      github: "https://github.com/Gulshan-nagar/jscript"
     },
     {
       id: 4,
       title: "Library Explorers",
       subtitle: "Library Management App",
-      description: "This is our Construct Week project at Masai. We built a Library Management System where users can manage books and records. The project uses Firebase for backend services like authentication and database. Built with HTML, CSS, JavaScript, React and Firebase.",
+      description: "A system to manage books and records. Built using React and Firebase during Masai's Construct Week.",
       image: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570",
       technologies: ["HTML", "CSS", "JavaScript", "React", "Firebase"],
-      demo: "https://library-explorers.netlify.app/"
+      demo: "https://library-explorers.netlify.app/",
+      github: "https://github.com/imakash13/The_code_explorers"
     },
     {
       id: 5,
       title: "GitScout",
       subtitle: "Analyze GitHub Profiles",
-      description: "Analyze GitHub profiles with advanced AI-based insights. Whether you're a recruiter or a student looking to improve your GitHub presence, GitScout offers intuitive tools for data-driven decision making.",
+      description: "AI-powered GitHub profile analyzer for recruiters and developers to gain insights.",
       image: "https://images.unsplash.com/photo-1618401471353-b98afee0b2eb",
       technologies: ["React", "JavaScript", "Tailwind", "Python", "FastAPI", "Docker", "GitHub"],
-      demo: "https://voluble-mooncake-8b0889.netlify.app/"
+      demo: "https://voluble-mooncake-8b0889.netlify.app/",
+      github: "https://github.com/TheApostle-07/gitscout"
     },
     {
       id: 6,
-      title: "Nike Clone",
+      title: "puma Clone",
       subtitle: "Shoes Website",
-      description: "A responsive Nike website clone showcasing modern web design practices and e-commerce features.",
-      image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff",
-      technologies: ["HTML", "CSS", "Bootstrap", "Netlify", "Figma"],
-      demo: "https://super-seahorse-5a8ae8.netlify.app/"
+      description: "A modern, responsive e-commerce puma website clone.",
+      image: "https://images.unsplash.com/photo-1715003132895-b10a23d3c90f?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      technologies: ["HTML", "CSS", "Bootstrap", "Netlify"],
+      demo: "https://pumaclonebygulshan.netlify.app/",
+      github: "https://github.com/Gulshan-nagar/puma-clone"
     },
     {
       id: 7,
       title: "Diwali Project",
       subtitle: "Diwali Crackers Simulation",
-      description: "This project demonstrates a virtual Diwali celebration with interactive fireworks and animations. It aims to bring the festive spirit online, allowing users to experience the joy of Diwali through a web-based simulation.",
+      description: "Web-based Diwali celebration with interactive fireworks and animations.",
       image: "https://media.istockphoto.com/id/2175620922/photo/female-friends-burning-sparklers-at-home-during-diwali-celebration.jpg?s=1024x1024&w=is&k=20&c=ivvzeY5ArWDWwtnnIjmeMPPM5AhPn9P4a6fF3I3P1w0=",
       technologies: ["WordPress", "Elementor", "HTML", "CSS", "JavaScript", "Figma"],
-      demo: "https://spiffy-selkie-49e7bb.netlify.app/"
+      demo: "https://spiffy-selkie-49e7bb.netlify.app/",
+      github: "https://github.com/Gulshan-nagar/Diwali_project"
     }
   ];
 
@@ -112,11 +119,8 @@ const Projects = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-          {projects.map((project, index) => (
-            <div 
-              key={project.id} 
-              className={`project-card flex flex-col bg-white shadow-lg rounded-2xl overflow-hidden reveal h-full`}
-            >
+          {projects.map((project) => (
+            <div key={project.id} className="project-card flex flex-col bg-white shadow-lg rounded-2xl overflow-hidden reveal h-full">
               <div className="h-64 w-full overflow-hidden">
                 <img 
                   src={project.image} 
@@ -131,12 +135,7 @@ const Projects = () => {
                 <div className="mb-4">
                   <div className="flex flex-wrap gap-2">
                     {project.technologies.map((tech, i) => (
-                      <span 
-                        key={i} 
-                        className="bg-navy/10 text-navy text-xs px-2 py-1 rounded"
-                      >
-                        {tech}
-                      </span>
+                      <span key={i} className="bg-navy/10 text-navy text-xs px-2 py-1 rounded">{tech}</span>
                     ))}
                   </div>
                 </div>

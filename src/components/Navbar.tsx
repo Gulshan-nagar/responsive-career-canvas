@@ -32,7 +32,8 @@ const Navbar = () => {
 
   // Resume download handler
   const handleDownloadResume = () => {
-    window.open("https://resume-builder-test-new.masaischool.com/resume/public?resumeId=6808c69f577a628cae30a157", "_blank");
+    
+    window.open("https://drive.google.com/file/d/1wEWX4Mc88QfSemj7SgBvRX5J1GAaST0o/view?usp=sharing", "_blank");
   };
 
   return (

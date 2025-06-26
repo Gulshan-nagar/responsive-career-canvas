@@ -109,7 +109,18 @@ const Contact = () => {
 
           {/* Contact Form */}
           <div className="reveal h-full">
-            <form className="bg-white p-8 rounded-lg shadow-sm h-full flex flex-col justify-between">
+            <form
+              name="contact"
+              method="POST"
+              data-netlify="true"
+              netlify-honeypot="bot-field"
+              action="/thank-you.html"
+              className="bg-white p-8 rounded-lg shadow-sm h-full flex flex-col justify-between"
+            >
+              {/* Required Hidden Inputs for Netlify */}
+              <input type="hidden" name="form-name" value="contact" />
+              <input type="hidden" name="bot-field" />
+
               <div>
                 <h3 className="text-2xl font-bold text-navy mb-6">Send a Message</h3>
 
@@ -121,6 +132,7 @@ const Contact = () => {
                     <input
                       type="text"
                       id="name"
+                      name="name"
                       className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-teal"
                       placeholder="John Doe"
                       required
@@ -134,6 +146,7 @@ const Contact = () => {
                     <input
                       type="email"
                       id="email"
+                      name="email"
                       className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-teal"
                       placeholder="john@example.com"
                       required
@@ -146,6 +159,7 @@ const Contact = () => {
                     </label>
                     <textarea
                       id="message"
+                      name="message"
                       rows={5}
                       className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-teal"
                       placeholder="Your message here..."

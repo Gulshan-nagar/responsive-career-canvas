@@ -28,27 +28,7 @@ const Footer = () => {
         </div>
         
         <div className="border-t border-white/20 mt-8 pt-8 flex flex-col sm:flex-row justify-between items-center">
-          <p>&copy; {currentYear} Your Name. All rights reserved.</p>
-          <div className="mt-4 sm:mt-0">
-            <a 
-              href="#about" 
-              className="text-gray-300 hover:text-teal transition-colors mr-6"
-            >
-              About
-            </a>
-            <a 
-              href="#projects" 
-              className="text-gray-300 hover:text-teal transition-colors mr-6"
-            >
-              Projects
-            </a>
-            <a 
-              href="#contact" 
-              className="text-gray-300 hover:text-teal transition-colors"
-            >
-              Contact
-            </a>
-          </div>
+          <p>&copy; {currentYear} Gulshan nagar. All rights reserved.</p>
         </div>
       </div>
     </footer>
