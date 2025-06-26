@@ -18,9 +18,13 @@ const Contact = () => {
       body: new URLSearchParams(data).toString()
     })
       .then(() => {
-        setSubmitted(true);
-        setSubmitting(false);
-      })
+      setSubmitted(true);
+      setSubmitting(false);
+      form.reset(); // clear form
+      setTimeout(() => {
+        setSubmitted(false); // reset thank-you message
+      }, 5000);
+    })
       .catch(() => {
         alert('Error submitting form');
         setSubmitting(false);
@@ -100,10 +104,10 @@ const Contact = () => {
                 <div className="mt-8">
                   <h4 className="font-medium text-lg mb-4">Social Profiles</h4>
                   <div className="flex gap-4">
-                    <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" className="bg-navy text-white p-3 rounded-full hover:bg-teal transition-colors" aria-label="LinkedIn">
+                    <a href="https://www.linkedin.com/in/gulshan-nagar-b9b847283?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app/" target="_blank" rel="noopener noreferrer" className="bg-navy text-white p-3 rounded-full hover:bg-teal transition-colors" aria-label="LinkedIn">
                       <Linkedin size={20} />
                     </a>
-                    <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" className="bg-navy text-white p-3 rounded-full hover:bg-teal transition-colors" aria-label="GitHub">
+                    <a href="https://github.com/Gulshan-nagar" target="_blank" rel="noopener noreferrer" className="bg-navy text-white p-3 rounded-full hover:bg-teal transition-colors" aria-label="GitHub">
                       <Github size={20} />
                     </a>
                   </div>
@@ -126,6 +130,7 @@ const Contact = () => {
                 data-netlify="true"
                 onSubmit={handleSubmit}
                 netlify-honeypot="bot-field"
+                hidden
                 className="bg-white p-8 rounded-lg shadow-sm h-full flex flex-col justify-between"
               >
                 <input type="hidden" name="form-name" value="contact" />
