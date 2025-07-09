@@ -1,4 +1,3 @@
-
 import { ExternalLink } from 'lucide-react';
 import { useEffect } from 'react';
 
@@ -44,7 +43,7 @@ const Projects = () => {
       title: "Expense Tracker",
       subtitle: "Track your expense",
       description: "Track income and expenses using the MERN stack. Displays total balance for personal finance management.",
-      image: "/expenseTracker.png",
+      image: "/Expense Tracker.png",
       technologies: ["MongoDB", "Express", "React", "Node.js", "HTML", "CSS", "Tailwind", "JavaScript"],
       demo: "https://expense-tracker-vg8p.onrender.com",
       github: "https://github.com/Gulshan-nagar/Expense-tracker"
@@ -54,7 +53,7 @@ const Projects = () => {
       title: "Calori-Scan",
       subtitle: "Scan your food calorie",
       description: "Scan food items to track calories instantly. Built with image recognition and modern web technologies.",
-      image: "/caloriScan.png",
+      image: "/Calori-Scan.png",
       technologies: ["HTML", "CSS", "Bootstrap", "JavaScript", "React", "Node", "Express", "MongoDB"],
       demo: "https://calori-scan-frontend.vercel.app/",
       github: "https://github.com/TheApostle-07/CaloriScan"
@@ -64,7 +63,7 @@ const Projects = () => {
       title: "JScript",
       subtitle: "Programming Language",
       description: "A hybrid language combining JavaScript and Python with support for variables, loops, and functions.",
-      image: "/jScript.png",
+      image: "/JScript.png",
       technologies: ["HTML", "CSS", "JavaScript"],
       demo: "https://jscript-programming-language.netlify.app",
       github: "https://github.com/Gulshan-nagar/jscript"
@@ -74,7 +73,7 @@ const Projects = () => {
       title: "Library Explorers",
       subtitle: "Library Management App",
       description: "A system to manage books and records. Built using React and Firebase during Masai's Construct Week.",
-      image: "/libraryExplorers.png",
+      image: "/Library Explorers.png",
       technologies: ["HTML", "CSS", "JavaScript", "React", "Firebase"],
       demo: "https://library-explorers.netlify.app/",
       github: "https://github.com/imakash13/The_code_explorers"
@@ -84,7 +83,7 @@ const Projects = () => {
       title: "GitScout",
       subtitle: "Analyze GitHub Profiles",
       description: "AI-powered GitHub profile analyzer for recruiters and developers to gain insights.",
-      image: "/gitScot.png",
+      image: "/GitScout.png",
       technologies: ["React", "JavaScript", "Tailwind", "Python", "FastAPI", "Docker", "GitHub"],
       demo: "https://voluble-mooncake-8b0889.netlify.app/",
       github: "https://github.com/TheApostle-07/gitscout"
@@ -94,7 +93,7 @@ const Projects = () => {
       title: "puma Clone",
       subtitle: "Shoes Website",
       description: "A modern, responsive e-commerce puma website clone.",
-      image: "/pumaClone.png",
+      image: "/puma Clone.png",
       technologies: ["HTML", "CSS", "Bootstrap", "Netlify"],
       demo: "https://pumaclonebygulshan.netlify.app/",
       github: "https://github.com/Gulshan-nagar/puma-clone"
@@ -104,7 +103,7 @@ const Projects = () => {
       title: "Diwali Project",
       subtitle: "Diwali Crackers Simulation",
       description: "Web-based Diwali celebration with interactive fireworks and animations.",
-      image: "/diwaliProject.png",
+      image: "/Diwali Project.png",
       technologies: ["WordPress", "Elementor", "HTML", "CSS", "JavaScript", "Figma"],
       demo: "https://spiffy-selkie-49e7bb.netlify.app/",
       github: "https://github.com/Gulshan-nagar/Diwali_project"
