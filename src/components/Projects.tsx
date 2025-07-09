@@ -1,3 +1,4 @@
+
 import { ExternalLink } from 'lucide-react';
 import { useEffect } from 'react';
 
@@ -43,7 +44,7 @@ const Projects = () => {
       title: "Expense Tracker",
       subtitle: "Track your expense",
       description: "Track income and expenses using the MERN stack. Displays total balance for personal finance management.",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f",
+      image: "/expenseTracker.png",
       technologies: ["MongoDB", "Express", "React", "Node.js", "HTML", "CSS", "Tailwind", "JavaScript"],
       demo: "https://expense-tracker-vg8p.onrender.com",
       github: "https://github.com/Gulshan-nagar/Expense-tracker"
@@ -53,7 +54,7 @@ const Projects = () => {
       title: "Calori-Scan",
       subtitle: "Scan your food calorie",
       description: "Scan food items to track calories instantly. Built with image recognition and modern web technologies.",
-      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
+      image: "/caloriScan.png",
       technologies: ["HTML", "CSS", "Bootstrap", "JavaScript", "React", "Node", "Express", "MongoDB"],
       demo: "https://calori-scan-frontend.vercel.app/",
       github: "https://github.com/TheApostle-07/CaloriScan"
@@ -63,7 +64,7 @@ const Projects = () => {
       title: "JScript",
       subtitle: "Programming Language",
       description: "A hybrid language combining JavaScript and Python with support for variables, loops, and functions.",
-      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
+      image: "/jScript.png",
       technologies: ["HTML", "CSS", "JavaScript"],
       demo: "https://jscript-programming-language.netlify.app",
       github: "https://github.com/Gulshan-nagar/jscript"
@@ -73,7 +74,7 @@ const Projects = () => {
       title: "Library Explorers",
       subtitle: "Library Management App",
       description: "A system to manage books and records. Built using React and Firebase during Masai's Construct Week.",
-      image: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570",
+      image: "/libraryExplorers.png",
       technologies: ["HTML", "CSS", "JavaScript", "React", "Firebase"],
       demo: "https://library-explorers.netlify.app/",
       github: "https://github.com/imakash13/The_code_explorers"
@@ -83,7 +84,7 @@ const Projects = () => {
       title: "GitScout",
       subtitle: "Analyze GitHub Profiles",
       description: "AI-powered GitHub profile analyzer for recruiters and developers to gain insights.",
-      image: "https://images.unsplash.com/photo-1618401471353-b98afee0b2eb",
+      image: "/gitScot.png",
       technologies: ["React", "JavaScript", "Tailwind", "Python", "FastAPI", "Docker", "GitHub"],
       demo: "https://voluble-mooncake-8b0889.netlify.app/",
       github: "https://github.com/TheApostle-07/gitscout"
@@ -93,7 +94,7 @@ const Projects = () => {
       title: "puma Clone",
       subtitle: "Shoes Website",
       description: "A modern, responsive e-commerce puma website clone.",
-      image: "https://images.unsplash.com/photo-1715003132895-b10a23d3c90f?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      image: "/pumaClone.png",
       technologies: ["HTML", "CSS", "Bootstrap", "Netlify"],
       demo: "https://pumaclonebygulshan.netlify.app/",
       github: "https://github.com/Gulshan-nagar/puma-clone"
@@ -103,7 +104,7 @@ const Projects = () => {
       title: "Diwali Project",
       subtitle: "Diwali Crackers Simulation",
       description: "Web-based Diwali celebration with interactive fireworks and animations.",
-      image: "https://media.istockphoto.com/id/2175620922/photo/female-friends-burning-sparklers-at-home-during-diwali-celebration.jpg?s=1024x1024&w=is&k=20&c=ivvzeY5ArWDWwtnnIjmeMPPM5AhPn9P4a6fF3I3P1w0=",
+      image: "/diwaliProject.png",
       technologies: ["WordPress", "Elementor", "HTML", "CSS", "JavaScript", "Figma"],
       demo: "https://spiffy-selkie-49e7bb.netlify.app/",
       github: "https://github.com/Gulshan-nagar/Diwali_project"

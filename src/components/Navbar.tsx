@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 
@@ -30,10 +31,21 @@ const Navbar = () => {
     };
   }, []);
 
-  // Resume download handler
+  // Resume handler - opens in new tab and downloads
   const handleDownloadResume = () => {
+    const resumeUrl = "https://drive.google.com/file/d/1wEWX4Mc88QfSemj7SgBvRX5J1GAaST0o/view?usp=sharing";
     
-    window.open("https://drive.google.com/file/d/1wEWX4Mc88QfSemj7SgBvRX5J1GAaST0o/view?usp=sharing", "_blank");
+    // Open in new tab
+    window.open(resumeUrl, "_blank");
+    
+    // Create a download link for the PDF version
+    const downloadUrl = "https://drive.google.com/uc?export=download&id=1wEWX4Mc88QfSemj7SgBvRX5J1GAaST0o";
+    const link = document.createElement('a');
+    link.href = downloadUrl;
+    link.download = 'Gulshan_Nagar_Resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (

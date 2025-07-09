@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { ArrowRight } from "lucide-react";
 import gulshanImage from "./gulshanPic3.png"; // Make sure the image is in the same folder
@@ -14,10 +15,19 @@ const Hero = () => {
   }, []);
 
   const handleDownloadResume = () => {
-    window.open(
-      "https://drive.google.com/file/d/1wEWX4Mc88QfSemj7SgBvRX5J1GAaST0o/view?usp=sharing",
-      "_blank"
-    );
+    const resumeUrl = "https://drive.google.com/file/d/1wEWX4Mc88QfSemj7SgBvRX5J1GAaST0o/view?usp=sharing";
+    
+    // Open in new tab
+    window.open(resumeUrl, "_blank");
+    
+    // Create a download link for the PDF version
+    const downloadUrl = "https://drive.google.com/uc?export=download&id=1wEWX4Mc88QfSemj7SgBvRX5J1GAaST0o";
+    const link = document.createElement('a');
+    link.href = downloadUrl;
+    link.download = 'Gulshan_Nagar_Resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (
