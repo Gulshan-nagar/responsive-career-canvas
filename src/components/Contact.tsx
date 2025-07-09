@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from 'react';
 import { Mail, Phone, Linkedin, Github, MapPin } from 'lucide-react';
 
@@ -5,17 +6,23 @@ const Contact = () => {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setSubmitting(true);
 
-    const form = e.target;
+    const form = e.target as HTMLFormElement;
     const data = new FormData(form);
+    
+    // Convert FormData to URLSearchParams format
+    const formDataEntries: Record<string, string> = {};
+    data.forEach((value, key) => {
+      formDataEntries[key] = value.toString();
+    });
 
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams(data).toString()
+      body: new URLSearchParams(formDataEntries).toString()
     })
       .then(() => {
       setSubmitted(true);
@@ -121,7 +128,7 @@ const Contact = () => {
             {submitted ? (
               <div className="bg-white p-8 rounded-lg shadow-sm text-center">
                 <h3 className="text-2xl font-bold text-navy mb-4">Thank you!</h3>
-                <p>Your message has been submitted. I’ll get back to you shortly.</p>
+                <p>Your message has been submitted. I'll get back to you shortly.</p>
               </div>
             ) : (
               <form
@@ -130,7 +137,6 @@ const Contact = () => {
                 data-netlify="true"
                 onSubmit={handleSubmit}
                 netlify-honeypot="bot-field"
-                hidden
                 className="bg-white p-8 rounded-lg shadow-sm h-full flex flex-col justify-between"
               >
                 <input type="hidden" name="form-name" value="contact" />
