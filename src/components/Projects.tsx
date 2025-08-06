@@ -40,16 +40,26 @@ const Projects = () => {
   const projects: Project[] = [
     {
       id: 1,
+      title: "Real-Time Order Management System",
+      subtitle: "Manage your order",
+      description: "Create your order and track using the MERN stack. See all your order in the real time.",
+      image: "/Order-Managemet.png",
+      technologies: ["MongoDB", "Express", "React", "Node.js", "HTML", "CSS", "Tailwind", "JavaScript"],
+      demo: "Real-Time Order Management System",
+      github: "https://github.com/Gulshan-nagar/Order-Management"
+    },
+    {
+      id: 2,
       title: "Expense Tracker",
       subtitle: "Track your expense",
       description: "Track income and expenses using the MERN stack. Displays total balance for personal finance management.",
       image: "/expense tracker.png",
-      technologies: ["MongoDB", "Express", "React", "Node.js", "HTML", "CSS", "Tailwind", "JavaScript"],
+      technologies: ["MongoDB", "Express","React", "Node.js", "HTML", "CSS", "Tailwind", "JavaScript"],
       demo: "https://expense-tracker-vg8p.onrender.com",
       github: "https://github.com/Gulshan-nagar/Expense-tracker"
     },
     {
-      id: 2,
+      id: 3,
       title: "Calori-Scan",
       subtitle: "Scan your food calorie",
       description: "Scan food items to track calories instantly. Built with image recognition and modern web technologies.",
@@ -59,7 +69,7 @@ const Projects = () => {
       github: "https://github.com/TheApostle-07/CaloriScan"
     },
     {
-      id: 3,
+      id: 4,
       title: "JScript",
       subtitle: "Programming Language",
       description: "A hybrid language combining JavaScript and Python with support for variables, loops, and functions.",
@@ -69,7 +79,7 @@ const Projects = () => {
       github: "https://github.com/Gulshan-nagar/jscript"
     },
     {
-      id: 4,
+      id: 5,
       title: "Library Explorers",
       subtitle: "Library Management App",
       description: "A system to manage books and records. Built using React and Firebase during Masai's Construct Week.",
@@ -79,7 +89,7 @@ const Projects = () => {
       github: "https://github.com/imakash13/The_code_explorers"
     },
     {
-      id: 5,
+      id: 6,
       title: "GitScout",
       subtitle: "Analyze GitHub Profiles",
       description: "AI-powered GitHub profile analyzer for recruiters and developers to gain insights.",
@@ -89,7 +99,7 @@ const Projects = () => {
       github: "https://github.com/TheApostle-07/gitscout"
     },
     {
-      id: 6,
+      id: 7,
       title: "puma Clone",
       subtitle: "Shoes Website",
       description: "A modern, responsive e-commerce puma website clone.",
@@ -99,7 +109,7 @@ const Projects = () => {
       github: "https://github.com/Gulshan-nagar/puma-clone"
     },
     {
-      id: 7,
+      id: 8,
       title: "Diwali Project",
       subtitle: "Diwali Crackers Simulation",
       description: "Web-based Diwali celebration with interactive fireworks and animations.",

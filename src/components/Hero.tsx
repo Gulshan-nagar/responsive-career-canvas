@@ -15,7 +15,7 @@ const Hero = () => {
   }, []);
 
   const handleDownloadResume = () => {
-    const resumeUrl = "https://drive.google.com/file/d/1wEWX4Mc88QfSemj7SgBvRX5J1GAaST0o/view?usp=sharing";
+    const resumeUrl = "https://drive.google.com/file/d/1mrDXpANmp-HI2TVGTCyuLPrRP1oJ6MmB/view?usp=sharing";
     
     // Open in new tab
     window.open(resumeUrl, "_blank");
