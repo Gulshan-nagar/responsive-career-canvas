@@ -33,20 +33,22 @@ const Navbar = () => {
 
   // Resume handler - opens in new tab and downloads
   const handleDownloadResume = () => {
-    const resumeUrl = "https://drive.google.com/file/d/1mrDXpANmp-HI2TVGTCyuLPrRP1oJ6MmB/view?usp=sharing";
-    
+    const fileId = "1mrDXpANmp-HI2TVGTCyuLPrRP1oJ6MmB";
+  
     // Open in new tab
-    window.open(resumeUrl, "_blank");
-    
-    // Create a download link for the PDF version
-    const downloadUrl = "https://drive.google.com/file/d/1mrDXpANmp-HI2TVGTCyuLPrRP1oJ6MmB/view?usp=sharing";
-    const link = document.createElement('a');
+    const viewUrl = `https://drive.google.com/file/d/${fileId}/view?usp=sharing`;
+    window.open(viewUrl, "_blank");
+  
+    // Download the same file
+    const downloadUrl = `https://drive.google.com/uc?export=download&id=${fileId}`;
+    const link = document.createElement("a");
     link.href = downloadUrl;
-    link.download = 'Gulshan_Nagar_Resume.pdf';
+    link.download = "GulshanNagar-Resume.pdf"; // file name for download
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
   };
+  
 
   return (
     <nav 
