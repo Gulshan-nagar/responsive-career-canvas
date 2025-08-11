@@ -21,7 +21,7 @@ const Hero = () => {
     window.open(resumeUrl, "_blank");
     
     // Create a download link for the PDF version
-    const downloadUrl = "https://drive.google.com/uc?export=download&id=1wEWX4Mc88QfSemj7SgBvRX5J1GAaST0o";
+    const downloadUrl = "https://drive.google.com/file/d/1mrDXpANmp-HI2TVGTCyuLPrRP1oJ6MmB/view?usp=sharing";
     const link = document.createElement('a');
     link.href = downloadUrl;
     link.download = 'Gulshan_Nagar_Resume.pdf';
