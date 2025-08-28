@@ -45,7 +45,7 @@ const Projects = () => {
       description: "Create your order and track using the MERN stack. See all your order in the real time.",
       image: "/Order-Management.png",
       technologies: ["MongoDB", "Express", "React", "Node.js", "HTML", "CSS", "Tailwind", "JavaScript"],
-      demo: "Real-Time Order Management System",
+      demo: "https://order-management-1-kt6d.onrender.com",
       github: "https://github.com/Gulshan-nagar/Order-Management"
     },
     {
